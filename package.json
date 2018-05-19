@@ -1,0 +1,14 @@
+{
+  "name": "news_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "babel": "babel --presets es2015 js/scripts.js -o build/main.bundle.js",
+    "build": "webpack",
+    "start": "node server.js",
+    "webpack": "webpack"
+  },
+  "author": "",
+  "license": "ISC"
+}
