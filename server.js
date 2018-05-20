@@ -1,10 +1,25 @@
 const express = require('express' );
+const path = require('path');
+
+require('dotenv').config()
+
+const newsToken = process.env.NEWS_API_KEY;
+
+console.log( 'loaded' );
+console.log(newsToken);
+
 const app = express();
 
-app.use(express.static('public'))
+app.use( express.static( 'dist' ) );
 
 app.get('/', ( req, res ) => {
-  res.send(`${__dirname}/index.html`)
-})
+  res.sendFile( path.join( __dirname, 'index.html' ))
+});
 
-app.listen(3000, () => console.log( 'listening on port 3000!' ) );
+app.post('/token', (req, res) => res.send({ token: newsToken } ) );
+
+app.set('port', process.env.PORT || 8080);
+
+var server = app.listen(app.get('port'), function () {
+  console.log('listening on port ', server.address().port);
+});
