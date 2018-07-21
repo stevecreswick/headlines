@@ -1,3 +1,4 @@
+
 const getToken = async (req) => {
   return fetch(req).then(function (response) {
     return response.json();
@@ -19,9 +20,10 @@ const getResults = async () => {
     newsToken = process.env.NEWS_API_KEY;
     return newsToken;
   }).then( ( token ) => {
-    const url = 'https://newsapi.org/v2/top-headlines?' +
-      'country=us&' +
-      'apiKey=' + token;
+    const url = 'https://newsapi.org/v2/everything?' +
+      'q=science' +
+      '&sortBy=popularity' +
+      '&apiKey=' + token;
 
     const req = new Request(url);
 

@@ -1,7 +1,6 @@
 <script>
-  import getResults from '../../services/api';
   import styles from './styles';
-
+  
   export default {
     name: 'articles',
     data() {
@@ -9,10 +8,8 @@
         articles: []
       }
     },
-    beforeCreate() {      
-      getResults().then((data) => {
-        this.articles = data.articles;
-      })
+    async beforeCreate() {            
+
     }
   }
 </script>

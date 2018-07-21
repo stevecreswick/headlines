@@ -13,7 +13,7 @@
 
 <template>
   <div class="navbar__container" id="navbar">
-    <a href="/">clickbaitheadlines.com</a>
+    <a href="/">Will this change?</a>
     <div>{{categories.length}}</div>
   </div>
 </template>
